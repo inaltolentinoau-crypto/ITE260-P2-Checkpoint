@@ -1,0 +1,49 @@
+def calculate_average(activity1, activity2, activity3):
+    average = (activity1 + activity2 + activity3) / 3
+    return average
+
+
+def determine_status(average):
+    if average >= 90:
+        return "Excellent"
+    elif average >= 80:
+        return "Very Good"
+    elif average >= 75:
+        return "Passed"
+    else:
+        return "Failed"
+
+
+number_of_students = int(input("How many students? "))
+
+if number_of_students < 3:
+    print("The program requires at least 3 students.")
+    number_of_students = 3
+
+for student_number in range(1, number_of_students + 1):
+
+    print("Student", student_number)
+
+    name = input("Enter name: ")
+
+    activity1 = float(input("Activity 1: "))
+    activity2 = float(input("Activity 2: "))
+    activity3 = float(input("Activity 3: "))
+
+    average = calculate_average(activity1, activity2, activity3)
+
+    status = determine_status(average)
+
+    print("                      ")
+    print("=== Student Result ===")
+    print("                      ")
+    print("Name:", name)
+    print("                      ")
+    print("Activity 1:", activity1)
+    print("Activity 2:", activity2)
+    print("Activity 3:", activity3)
+    print("-----------------")
+    print("Average: {:.2f}".format(average))
+    print("                      ")
+    print("Status:", status)
+    print("                      ")
